@@ -7,14 +7,14 @@ from .simulation import run_simulation
 app = FastAPI(
 title="Quantora Backend",
 description="AI Portfolio Risk Intelligence – Monte Carlo simulation engine",
-version="0.1.0"
+version="0.1.0",
 )
 
-# Enable CORS
+# CORS MUST be added immediately after FastAPI() creation
 
 app.add_middleware(
 CORSMiddleware,
-allow_origins=["*"],   # allow Vercel frontend
+allow_origins=["*"],   # allow frontend (Vercel)
 allow_credentials=True,
 allow_methods=["*"],
 allow_headers=["*"],
@@ -40,6 +40,9 @@ except Exception as e:
 @app.get("/")
 def health_check():
 return {"status": "ok", "service": "quantora-backend"}
+
+
+
 
 
 
