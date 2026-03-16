@@ -10,11 +10,15 @@ description="AI Portfolio Risk Intelligence – Monte Carlo simulation engine",
 version="0.1.0"
 )
 
-# Allow frontend requests (Vercel)
+# Allow requests from Vercel frontend
+
+origins = [
+"https://quantora-seven.vercel.app",
+]
 
 app.add_middleware(
 CORSMiddleware,
-allow_origins=["https://quantora-seven.vercel.app"],  # later you can restrict to your Vercel domain
+allow_origins=origins,
 allow_credentials=True,
 allow_methods=["*"],
 allow_headers=["*"],
@@ -40,5 +44,6 @@ except Exception as e:
 @app.get("/")
 def health_check():
 return {"status": "ok", "service": "quantora-backend"}
+
 
 
