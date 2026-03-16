@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-navy text-white antialiased min-h-screen;
+    background-color: #0B1120;
+  }
+}
+
+/* Glassmorphism utility */
+@layer components {
+  .glass-card {
+    @apply rounded-2xl border border-white/10 bg-[#111827]/90 backdrop-blur-sm transition-all duration-300;
+  }
+  .glass-card:hover {
+    box-shadow: 0 0 24px rgba(59, 130, 246, 0.15);
+  }
+}
