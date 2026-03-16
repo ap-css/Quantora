@@ -10,11 +10,13 @@ description="AI Portfolio Risk Intelligence – Monte Carlo simulation engine",
 version="0.1.0"
 )
 
-# Allow requests from Vercel frontend
+# Allowed frontend origins
 
 origins = [
 "https://quantora-seven.vercel.app",
 ]
+
+# CORS middleware
 
 app.add_middleware(
 CORSMiddleware,
