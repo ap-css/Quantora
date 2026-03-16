@@ -5,7 +5,7 @@ import type {
 } from '../types/simulation';
 
 const apiClient = axios.create({
-  baseURL: 'http://127.0.0.1:8000',
+  baseURL: 'https://quantora-7fpy.onrender.com',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',

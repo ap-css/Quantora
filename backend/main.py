@@ -1,42 +1,44 @@
-from __future__ import annotations
-
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 
 from .schemas import SimulationRequest, SimulationResponse
-from .simulation import run_simulation 
-
+from .simulation import run_simulation
 
 app = FastAPI(
-    title="Quantora Backend",
-    description="AI Portfolio Risk Intelligence – Monte Carlo simulation engine.",
-    version="0.1.0",
+title="Quantora Backend",
+description="AI Portfolio Risk Intelligence – Monte Carlo simulation engine",
+version="0.1.0"
 )
 
+# Allow frontend requests (Vercel)
 
-@app.post(
-    "/simulate",
-    response_model=SimulationResponse,
-    summary="Run Monte Carlo portfolio simulation",
+app.add_middleware(
+CORSMiddleware,
+allow_origins=["*"],  # later you can restrict to your Vercel domain
+allow_credentials=True,
+allow_methods=["*"],
+allow_headers=["*"],
 )
-def simulate(request: SimulationRequest) -> SimulationResponse:
-    """
-    Run a Monte Carlo simulation for a given investor profile and portfolio risk level.
-    """
-    try:
-        result = run_simulation(
-            age=request.age,
-            monthly_investment=request.monthly_investment,
-            risk_level=request.risk_level,
-            years=request.years,
-            target_amount=request.target_amount,
-        )
-    except Exception as e:  # noqa: BLE001 - surface any internal error as 500
-        raise HTTPException(status_code=500, detail=str(e)) from e
 
-    return SimulationResponse(**result)
+@app.post("/simulate", response_model=SimulationResponse)
+def simulate(request: SimulationRequest):
+try:
+result = run_simulation(
+age=request.age,
+monthly_investment=request.monthly_investment,
+risk_level=request.risk_level,
+years=request.years,
+target_amount=request.target_amount,
+)
+return SimulationResponse(**result)
 
+```
+except Exception as e:
+    raise HTTPException(status_code=500, detail=str(e))
+```
 
-@app.get("/", tags=["health"])
-def health_check() -> dict:
-    return {"status": "ok", "service": "quantora-backend"}
+@app.get("/")
+def health_check():
+return {"status": "ok", "service": "quantora-backend"}
+
 
