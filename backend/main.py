@@ -14,7 +14,7 @@ version="0.1.0"
 
 app.add_middleware(
 CORSMiddleware,
-allow_origins=["*"],  # later you can restrict to your Vercel domain
+allow_origins=["https://quantora-seven.vercel.app"],  # later you can restrict to your Vercel domain
 allow_credentials=True,
 allow_methods=["*"],
 allow_headers=["*"],
