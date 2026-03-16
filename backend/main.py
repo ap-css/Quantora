@@ -22,20 +22,19 @@ allow_headers=["*"],
 
 @app.post("/simulate", response_model=SimulationResponse)
 def simulate(request: SimulationRequest):
-try:
-result = run_simulation(
-age=request.age,
-monthly_investment=request.monthly_investment,
-risk_level=request.risk_level,
-years=request.years,
-target_amount=request.target_amount,
-)
-return SimulationResponse(**result)
+    try:
+        result = run_simulation(
+            age=request.age,
+            monthly_investment=request.monthly_investment,
+            risk_level=request.risk_level,
+            years=request.years,
+            target_amount=request.target_amount,
+        )
+        return SimulationResponse(**result)
 
-```
-except Exception as e:
-    raise HTTPException(status_code=500, detail=str(e))
-```
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 
 @app.get("/")
 def health_check():
