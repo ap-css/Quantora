@@ -38,7 +38,7 @@ def simulate(request: SimulationRequest):
 
 @app.get("/")
 def health_check():
-return {"status": "ok", "service": "quantora-backend"}
+    return {"status": "ok", "service": "quantora-backend"}
 
 
 
