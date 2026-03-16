@@ -10,11 +10,11 @@ description="AI Portfolio Risk Intelligence – Monte Carlo simulation engine",
 version="0.1.0",
 )
 
-# CORS MUST be added immediately after FastAPI() creation
+# Enable CORS
 
 app.add_middleware(
 CORSMiddleware,
-allow_origins=["*"],   # allow frontend (Vercel)
+allow_origins=["*"],
 allow_credentials=True,
 allow_methods=["*"],
 allow_headers=["*"],
