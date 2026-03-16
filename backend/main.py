@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from fastapi import FastAPI, HTTPException
 
-from schemas import SimulationRequest, SimulationResponse
-from simulation import run_simulation 
+from .schemas import SimulationRequest, SimulationResponse
+from .simulation import run_simulation 
 
 
 app = FastAPI(

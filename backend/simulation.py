@@ -4,7 +4,7 @@ from typing import Dict, List
 
 import numpy as np
 
-from config import N_SIMULATIONS, RISK_FREE_RATE, get_risk_profile
+from .config import N_SIMULATIONS, RISK_FREE_RATE, get_risk_profile
 
 
 def run_simulation(
