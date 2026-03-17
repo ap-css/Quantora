@@ -40,24 +40,22 @@ Deployment
 - Vercel (Frontend)
 - Render (Backend)
 
-💻 Local Setup
+### 💻 Local Setup
 
-1. Clone the Repository
+**1. Clone the Repository**
 
-Bash
-git clone https://github.com/ap-css/Quantora.git
+```bash
+git clone [https://github.com/ap-css/Quantora.git](https://github.com/ap-css/Quantora.git)
 cd Quantora
 
 2. Backend Setup
 
-Bash
 cd backend
 pip install -r requirements.txt
 uvicorn backend.main:app --reload
 
 3. Frontend Setup
 
-Bash
 cd frontend
 npm install
 npm run dev
