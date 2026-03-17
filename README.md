@@ -40,12 +40,12 @@ Deployment
 - Vercel (Frontend)
 - Render (Backend)
 
-### 💻 Local Setup
+**### 💻 Local Setup**
 
-**1. Clone the Repository**
+1. Clone the Repository
 
 ```bash
-git clone [https://github.com/ap-css/Quantora.git](https://github.com/ap-css/Quantora.git)
+git clone https://github.com/ap-css/Quantora.git
 cd Quantora
 
 2. Backend Setup
