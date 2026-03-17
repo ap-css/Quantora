@@ -7,9 +7,9 @@ By leveraging Geometric Brownian Motion (GBM), it generates 10,000+ market scena
 
 🚀 Quick Links
 
-🌐 Live Demo: quantora-seven.vercel.app
-⚙️ Backend API: quantora-7fpy.onrender.com
-📄 API Docs: Swagger UI
+- 🌐 Live Demo: quantora-seven.vercel.app
+- ⚙️ Backend API: quantora-7fpy.onrender.com
+- 📄 API Docs: Swagger UI
 
 ✨ Key Features
 
@@ -40,25 +40,22 @@ Deployment
 - Vercel (Frontend)
 - Render (Backend)
 
-**### 💻 Local Setup**
+### 💻 Local Setup
 
+```text
 1. Clone the Repository
-
-```bash
-git clone https://github.com/ap-css/Quantora.git
-cd Quantora
+   git clone https://github.com/ap-css/Quantora.git
+   cd Quantora
 
 2. Backend Setup
-
-cd backend
-pip install -r requirements.txt
-uvicorn backend.main:app --reload
+   cd backend
+   pip install -r requirements.txt
+   uvicorn backend.main:app --reload
 
 3. Frontend Setup
-
-cd frontend
-npm install
-npm run dev
+   cd frontend
+   npm install
+   npm run dev
 
 🔌 API Reference
 Endpoint: POST /simulate
